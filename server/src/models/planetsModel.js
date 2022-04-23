@@ -36,7 +36,7 @@ function loadPlanetsData() {
 			})
 			.on("end", () => {
 				console.log(
-					`${habitablePlanets.length} habitable planets found:`
+					`${habitablePlanets.length} habitable planets found.`
 				);
 				resolve();
 			})
