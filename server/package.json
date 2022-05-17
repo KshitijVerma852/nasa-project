@@ -7,7 +7,8 @@
 		"test": "jest",
 		"test-watch": "jest --watch",
 		"watch": "nodemon src/server.js",
-		"start": "node src/server.js"
+		"start": "node src/server.js",
+		"cluster": "pm2 start src/server.js -i max"
 	},
 	"keywords": [],
 	"author": "",
@@ -18,6 +19,7 @@
 		"express": "^4.17.3",
 		"morgan": "^1.10.0",
 		"nasa-project": "file:..",
+		"pm2": "^5.2.0",
 		"supertest": "^6.2.3"
 	},
 	"devDependencies": {

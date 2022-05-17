@@ -11,4 +11,4 @@ async function startServer() {
 	});
 }
 
-startServer();
+startServer().then((r) => {});
