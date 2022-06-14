@@ -57,10 +57,10 @@ async function savePlanet(data) {
 	try {
 		await planets.updateOne(
 			{
-				keplerName: data.kepler_name
+				keplerName: data["kepler_name"]
 			},
 			{
-				keplerName: data.kepler_name
+				keplerName: data["kepler_name"]
 			},
 			{
 				upsert: true
