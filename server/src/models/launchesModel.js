@@ -4,29 +4,18 @@ const planets = require("./planetsMongo");
 
 const DEFAULT_FLIGHT_NUMBER = 100;
 
-const launch = {
-	flightNumber: 100, // flight_number
-	mission: "Kepler Exploration X", // name
-	rocket: "Explorer IS1", // rocket.name
-	launchDate: new Date("December 27, 2030"), // date_local
-	target: "Kepler-442 b", // NA
-	customer: ["NASA", "Vision"], //payload.customers for each payload
-	upcoming: true, // upcoming
-	success: true // success
-};
-
-saveLaunch(launch).then(() => {
-	console.log("Launch saved.");
-});
-
-async function getAllLaunches() {
-	return launches.find(
-		{},
-		{
-			_id: 0,
-			__v: 0
-		}
-	);
+async function getAllLaunches(skip, limit) {
+	return launches
+		.find(
+			{},
+			{
+				_id: 0,
+				__v: 0
+			}
+		)
+		.sort({ flightNumber: 1 })
+		.skip(skip)
+		.limit(limit);
 }
 
 async function saveLaunch(launch) {
