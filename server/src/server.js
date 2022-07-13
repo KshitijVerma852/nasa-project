@@ -5,6 +5,7 @@ const { loadPlanetsData } = require("./models/planetsModel");
 const { loadLaunchData } = require("./models/launchesModel");
 const server = http.createServer(app);
 const PORT = process.env.PORT || 8000;
+require("dotenv").config();
 
 async function startServer() {
 	await mongoConnect();
