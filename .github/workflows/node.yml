@@ -1,9 +1,9 @@
 name: NASA Project CI
 on:
     push:
-        branches: [master]
+        branches: [ master ]
     pull_request:
-        branches: [master]
+        branches: [ master ]
 jobs:
     build:
         runs-on: ubuntu-latest
@@ -12,6 +12,6 @@ jobs:
             - name: Use Node.js version 16
               uses: actions/setup-node@v2
               with:
-                  node-version: "16"
-            - run: npm run install
+                  node-version: '16'
+            - run: npm install
             - run: npm run build --prefix client
