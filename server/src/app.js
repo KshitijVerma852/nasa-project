@@ -1,9 +1,11 @@
-const express = require("express");
-const path = require("path");
-const cors = require("cors");
-const morgan = require("morgan");
+const path = require('path');
+const express = require('express');
+const cors = require('cors');
+const morgan = require('morgan');
+
+const api = require('./routes/api');
+
 const app = express();
-const api = require("./routes/api");
 
 app.use(
 	cors({
